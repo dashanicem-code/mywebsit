@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Економічна безпека В'єтнаму</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .summary {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #667eea;
+        }
+        
+        .summary h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-section {
+            margin-bottom: 3rem;
+        }
+        
+        .chart-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+        .indicator {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .indicator h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .level-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        
+        .level-optimal {
+            background: #28a745;
+            color: white;
+        }
+        
+        .level-satisfactory {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .level-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .trend-positive {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .trend-negative {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Резюме</a></li>
+            <li><a href="economic-security.html" class="active">Економічна безпека В'єтнаму</a></li>
+            <li><a href="threats.html">Загрози та протидія</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="header">
+            <h1>📊 Економічна безпека В'єтнаму</h1>
+            <p>Аналіз ключових показників за 2015-2024 роки</p>
+        </div>
+        
+        <div class="content">
+            <div class="summary">
+                <h2>Підсумок стану економічної безпеки В'єтнаму</h2>
+                <p>За результатами аналізу макроекономічних та соціальних показників В'єтнаму за 2015-2024 роки, економічна безпека країни демонструє неоднорідну картину з як позитивними, так і негативними тенденціями.</p>
+                
+                <p>Макроекономічна безпека В'єтнаму знаходиться на задовільному рівні завдяки контрольованій інфляції (середній показник 2,7%) та оптимальному рівню безробіття (1,7%). Країна демонструє стабільне економічне зростання та ефективне управління грошово-кредитною політикою.</p>
+                
+                <p>Однак соціальна безпека викликає серйозні занепокоєння через високий рівень нерівності доходів (децильний коефіцієнт 10,94) та значну зайнятість у неформальному секторі (73,1%). Ці показники знаходяться на абсолютно небезпечному рівні та свідчать про структурні проблеми в економіці.</p>
+                
+                <p>Позитивними тенденціями є зниження безробіття та скорочення неформальної зайнятості, що вказує на поступове покращення якості економічного зростання. Водночас зростання нерівності доходів залишається викликом для сталого розвитку країни.</p>
+                
+                <p>Ключові показники: контрольована інфляція, низьке безробіття, високий ВВП зростання, але значна нерівність доходів та неформальна зайнятість потребують системних реформ для забезпечення інклюзивного економічного розвитку.</p>
+            </div>
+            
+            <div class="chart-section">
+                <h3>1. Рівень безробіття (2017-2024)</h3>
+                <div class="chart-container">
+                    <canvas id="unemploymentChart"></canvas>
+                </div>
+                <div class="indicator">
+                    <h4>Показник: Рівень безробіття (за методологією МОП)</h4>
+                    <p><strong>Середнє значення:</strong> 1,7%</p>
+                    <p><strong>Рівень безпеки:</strong> <span class="level-badge level-optimal">Оптимальний</span></p>
+                    <p><strong>Тренд:</strong> <span class="trend-positive">↓ Низхідний (позитивна тенденція)</span></p>
+                    <p>Макроекономічна безпека В'єтнаму за показником безробіття у 2017-2024 рр. знаходилася на оптимальному рівні. Низький рівень безробіття свідчить про високу зайнятість населення та ефективну економічну політику.</p>
+                </div>
+            </div>
+            
+            <div class="chart-section">
+                <h3>2. Інфляція - Індекс споживчих цін (2015-2024)</h3>
+                <div class="chart-container">
+                    <canvas id="inflationChart"></canvas>
+                </div>
+                <div class="indicator">
+                    <h4>Показник: Індекс споживчих цін (до грудня попереднього року)</h4>
+                    <p><strong>Середнє значення:</strong> 2,7%</p>
+                    <p><strong>Рівень безпеки:</strong> <span class="level-badge level-satisfactory">Задовільний</span></p>
+                    <p><strong>Діапазон:</strong> від 0,6% (2015) до 3,6% (2024)</p>
+                    <p>Макроекономічна безпека В'єтнаму за показником інфляції у 2015-2024 рр. знаходилася на задовільному рівні. Помірна інфляція в межах 1,5-3% сприяє економічному зростанню без значного знецінення національної валюти.</p>
+                </div>
+            </div>
+            
+            <div class="chart-section">
+                <h3>3. Нерівність доходів - Децильний коефіцієнт фондів (2017-2022)</h3>
+                <div class="chart-container">
+                    <canvas id="inequalityChart"></canvas>
+                </div>
+                <div class="indicator">
+                    <h4>Показник: Співвідношення доходів 10% найбагатших та найбідніших</h4>
+                    <p><strong>Середнє значення:</strong> 10,94 разів</p>
+                    <p><strong>Рівень безпеки:</strong> <span class="level-badge level-danger">Абсолютно небезпечний</span></p>
+                    <p><strong>Тренд:</strong> <span class="trend-negative">↑ Висхідний (негативна тенденція)</span></p>
+                    <p><strong>Частка найбагатших 10%:</strong> ~28% від загальних доходів</p>
+                    <p><strong>Частка найбідніших 10%:</strong> ~2,6% від загальних доходів</p>
+                    <p>Соціальна безпека В'єтнаму за показником співвідношення доходів у 2017-2022 рр. знаходилася на абсолютно небезпечному рівні. Високий рівень нерівності загрожує соціальній стабільності та вимагає перерозподільчої політики.</p>
+                </div>
+            </div>
+            
+            <div class="chart-section">
+                <h3>4. Зайнятість у неформальному секторі (2013-2020)</h3>
+                <div class="chart-container">
+                    <canvas id="informalChart"></canvas>
+                </div>
+                <div class="indicator">
+                    <h4>Показник: Зайнятість у неформальному секторі (% до загальної зайнятості)</h4>
+                    <p><strong>Середнє значення:</strong> 73,1%</p>
+                    <p><strong>Рівень безпеки:</strong> <span class="level-badge level-danger">Абсолютно небезпечний</span></p>
+                    <p><strong>Тренд:</strong> <span class="trend-positive">↓ Низхідний (позитивна тенденція)</span></p>
+                    <p><strong>Динаміка:</strong> Зниження з 79,5% (2013) до 67,0% (2020)</p>
+                    <p>Макроекономічна безпека В'єтнаму за показником неформальної зайнятості у 2013-2020 рр. знаходилася на абсолютно небезпечному рівні. Висока частка неформальної зайнятості обмежує податкові надходження та соціальний захист працівників, хоча тренд на зниження є позитивним сигналом.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const chartColors = {
+            primary: '#667eea',
+            secondary: '#764ba2',
+            success: '#28a745',
+            danger: '#dc3545',
+            warning: '#ffc107'
+        };
+        
+        const unemploymentData = {
+            labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            datasets: [{
+                label: 'Рівень безробіття (%)',
+                data: [1.9, 1.2, 1.7, 2.1, 2.4, 1.5, 1.6, 1.4],
+                borderColor: chartColors.success,
+                backgroundColor: chartColors.success + '20',
+                tension: 0.4,
+                fill: true
+            }]
+        };
+        
+        const inflationData = {
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            datasets: [{
+                label: 'Індекс споживчих цін (%)',
+                data: [0.6, 2.7, 3.5, 3.5, 2.8, 3.2, 1.8, 3.2, 3.3, 3.6],
+                borderColor: chartColors.warning,
+                backgroundColor: chartColors.warning + '20',
+                tension: 0.4,
+                fill: true
+            }]
+        };
+        
+        const inequalityData = {
+            labels: ['2017', '2018', '2019', '2020', '2021', '2022'],
+            datasets: [{
+                label: 'Децильний коефіцієнт (разів)',
+                data: [9.9, 10.4, 11.0, 11.4, 10.8, 10.94],
+                borderColor: chartColors.danger,
+                backgroundColor: chartColors.danger + '20',
+                tension: 0.4,
+                fill: true
+            }]
+        };
+        
+        const informalData = {
+            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            datasets: [{
+                label: 'Неформальна зайнятість (%)',
+                data: [79.5, 76.9, 75.5, 74.1, 73.3, 71.4, 67.3, 67.0],
+                borderColor: chartColors.danger,
+                backgroundColor: chartColors.danger + '20',
+                tension: 0.4,
+                fill: true
+            }]
+        };
+        
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+        
+        new Chart(document.getElementById('unemploymentChart'), {
+            type: 'line',
+            data: unemploymentData,
+            options: chartOptions
+        });
+        
+        new Chart(document.getElementById('inflationChart'), {
+            type: 'line',
+            data: inflationData,
+            options: chartOptions
+        });
+        
+        new Chart(document.getElementById('inequalityChart'), {
+            type: 'line',
+            data: inequalityData,
+            options: chartOptions
+        });
+        
+        new Chart(document.getElementById('informalChart'), {
+            type: 'line',
+            data: informalData,
+            options: chartOptions
+        });
+    </script>
+</body>
+</html>

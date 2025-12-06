@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрози та протидія економічній безпеці В'єтнаму</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .intro {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        tbody tr {
+            transition: background 0.3s;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        
+        tbody tr:nth-child(even):hover {
+            background: #f0f2f5;
+        }
+        
+        .threat-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .counter-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #28a745;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .threat-title {
+            font-weight: 600;
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+        
+        .counter-title {
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+        
+        .description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .connection-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+        
+        .connection-section h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .connection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .connection-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .connection-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            th, td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .threat-number, .counter-number {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Резюме</a></li>
+            <li><a href="economic-security.html">Економічна безпека В'єтнаму</a></li>
+            <li><a href="threats.html" class="active">Загрози та протидія</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Загрози та методи протидії</h1>
+            <p>Аналіз економічної безпеки В'єтнаму</p>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <p><strong>Економічна безпека В'єтнаму</strong> залежить від здатності країни протистояти внутрішнім і зовнішнім викликам. На основі проведеного аналізу макроекономічних показників виявлено критичні загрози, які потребують системної протидії для забезпечення сталого розвитку та соціальної стабільності.</p>
+            </div>
+            
+            <div class="section">
+                <h2>🚨 5 основних загроз економічній безпеці В'єтнаму</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">#</th>
+                                <th style="width: 30%;">Загроза</th>
+                                <th>Опис та наслідки</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="threat-number">1</span></td>
+                                <td>
+                                    <div class="threat-title">Висока нерівність доходів</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Децільний коефіцієнт 10,94 (абсолютно небезпечний рівень) свідчить про значний розрив між багатими та бідними. 10% найбагатших контролюють 28% доходів, тоді як 10% найбідніших - лише 2,6%. Це загрожує соціальною нестабільністю, обмежує внутрішній попит та перешкоджає інклюзивному економічному зростанню.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="threat-number">2</span></td>
+                                <td>
+                                    <div class="threat-title">Надмірна зайнятість у неформальному секторі</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        73,1% населення працює в неформальному секторі (абсолютно небезпечний рівень). Це призводить до втрати податкових надходжень, відсутності соціального захисту працівників, низької продуктивності праці та обмежує можливості економічної модернізації країни.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="threat-number">3</span></td>
+                                <td>
+                                    <div class="threat-title">Зовнішні економічні шоки</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        В'єтнам має експортно-орієнтовану економіку з високою залежністю від зовнішньої торгівлі. Глобальні економічні кризи, торговельні війни між великими економіками (США-Китай), зміни в попиті на експортні товари можуть суттєво вплинути на економічне зростання та рівень зайнятості.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="threat-number">4</span></td>
+                                <td>
+                                    <div class="threat-title">Інфляційні ризики</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Хоча середній рівень інфляції (2,7%) знаходиться на задовільному рівні, існують ризики прискорення інфляції через зовнішні фактори (зростання цін на енергоносії, продовольство), що може знизити купівельну спроможність населення та конкурентоспроможність експорту.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="threat-number">5</span></td>
+                                <td>
+                                    <div class="threat-title">Технологічне відставання та низька продуктивність</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Висока частка неформальної зайнятості та традиційних секторів економіки свідчить про недостатній рівень технологізації виробництва. Це обмежує можливості країни для переходу до економіки з високою доданою вартістю та загрожує втратою конкурентоспроможності у глобальній економіці.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>✅ 5 методів протидії загрозам</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">#</th>
+                                <th style="width: 30%;">Метод протидії</th>
+                                <th>Механізми реалізації</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="counter-number">1</span></td>
+                                <td>
+                                    <div class="counter-title">Прогресивна податкова та соціальна політика</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Впровадження прогресивного оподаткування доходів, розширення соціальних програм для малозабезпечених верств населення, підвищення мінімальної заробітної плати, розвиток доступної освіти та охорони здоров'я. Це зменшить нерівність доходів та посилить соціальну згуртованість.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="counter-number">2</span></td>
+                                <td>
+                                    <div class="counter-title">Формалізація економіки та підтримка МСП</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Спрощення процедур реєстрації бізнесу, зниження податкового навантаження для малого бізнесу на початковій стадії, надання фінансової підтримки та консультацій для переходу з неформального сектору, розвиток доступного кредитування для МСП, створення бізнес-інкубаторів.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="counter-number">3</span></td>
+                                <td>
+                                    <div class="counter-title">Диверсифікація економіки та експортних ринків</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Розвиток нових галузей економіки (високотехнологічні сектори, послуги, туризм), розширення географії експорту, зміцнення внутрішнього ринку для зменшення залежності від зовнішнього попиту, укладання торговельних угод з різними регіонами світу, стимулювання імпортозаміщення в стратегічних галузях.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="counter-number">4</span></td>
+                                <td>
+                                    <div class="counter-title">Зміцнення монетарної та фіскальної стабільності</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Підтримка незалежної монетарної політики центрального банку, контроль інфляції через інструменти облікової ставки та валютних інтервенцій, накопичення валютних резервів для захисту від зовнішніх шоків, збалансування державного бюджету, розвиток внутрішнього ринку державних облігацій.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="counter-number">5</span></td>
+                                <td>
+                                    <div class="counter-title">Цифровізація та інвестиції в людський капітал</div>
+                                </td>
+                                <td>
+                                    <div class="description">
+                                        Впровадження цифрових технологій у виробництво та державне управління, розвиток ІТ-сектору, інвестиції в освіту (особливо STEM-дисципліни), програми перекваліфікації працівників, залучення прямих іноземних інвестицій у високотехнологічні галузі, розвиток інноваційної інфраструктури та технопарків.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="connection-section">
+                <h3>🔗 Зв'язок між загрозами та методами протидії</h3>
+                <div class="connection-grid">
+                    <div class="connection-item">
+                        <strong>Загроза #1 → Метод #1</strong>
+                        <p>Висока нерівність доходів нейтралізується через прогресивну податкову та соціальну політику</p>
+                    </div>
+                    <div class="connection-item">
+                        <strong>Загроза #2 → Метод #2</strong>
+                        <p>Неформальна зайнятість зменшується через формалізацію економіки та підтримку МСП</p>
+                    </div>
+                    <div class="connection-item">
+                        <strong>Загроза #3 → Метод #3</strong>
+                        <p>Зовнішні шоки пом'якшуються диверсифікацією економіки та експортних ринків</p>
+                    </div>
+                    <div class="connection-item">
+                        <strong>Загроза #4 → Метод #4</strong>
+                        <p>Інфляційні ризики контролюються через зміцнення монетарної та фіскальної стабільності</p>
+                    </div>
+                    <div class="connection-item">
+                        <strong>Загроза #5 → Метод #5</strong>
+                        <p>Технологічне відставання долається через цифровізацію та інвестиції в людський капітал</p>
+                    </div>
+                    <div class="connection-item">
+                        <strong>Комплексний підхід</strong>
+                        <p>Всі п'ять методів протидії взаємопов'язані та посилюють один одного, створюючи синергетичний ефект для забезпечення економічної безпеки В'єтнаму</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

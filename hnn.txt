@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Даша Мосійчук - Резюме</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .experience-item h3, .education-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .language-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievements {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .achievements h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Резюме</a></li>
+            <li><a href="economic-security.html">Економічна безпека В'єтнаму</a></li>
+            <li><a href="threats.html">Загрози та протидія</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Даша Мосійчук</h1>
+            <p>Тренер з спорту | Студентка | Волонтер</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>d.mosiychuk_fmtp_7_25_b_d@knute.edu.ua</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Київ, Україна</span>
+                </div>
+                <div class="contact-item">
+                    <span>🎂</span>
+                    <span>27.10.2008 (17 років)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Освіта</h2>
+                <div class="education-item">
+                    <h3>Київський національний торговельно-економічний університет (КНТЕУ)</h3>
+                    <p class="date">2024 - теперішній час</p>
+                    <p>Студентка</p>
+                </div>
+                <div class="education-item">
+                    <h3>Радомишльський опорний ліцей №2</h3>
+                    <p class="date">Середня освіта</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Досвід роботи</h2>
+                <div class="experience-item">
+                    <h3>Тренер з спорту</h3>
+                    <p class="date">Січень 2024 - теперішній час</p>
+                    <ul>
+                        <li>Тренування юнацької команди з гирьового спорту (6 годин на тиждень)</li>
+                        <li>Робота в великій команді</li>
+                        <li>Взаємодія з постачальниками</li>
+                        <li>Створення відеоконтенту для приватних компаній з метою просування</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Навички</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>Спорт та коучинг</strong>
+                        <p>Тренування молоді, популяризація спорту в школах</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Креативні навички</strong>
+                        <p>Відеомонтаж, графічний дизайн (Canva), створення контенту</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Організація</strong>
+                        <p>Планування подій, управління проєктами, командна робота</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Соціальні мережі</strong>
+                        <p>Управління контентом, промоція</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Мовні навички</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <strong>Українська</strong>
+                        <p>Рідна мова</p>
+                    </div>
+                    <div class="language-item">
+                        <strong>Англійська</strong>
+                        <p>Читання: B1 | Аудіювання: B1<br>
+                        Письмо: A2 | Говоріння: B1</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Досягнення та волонтерство</h2>
+                <div class="achievements">
+                    <h4>🏆 Спортивні досягнення</h4>
+                    <ul>
+                        <li>Майстер спорту з гирьового спорту</li>
+                        <li>Чемпіонка України та Європи</li>
+                        <li>Грає у волейбол та баскетбол</li>
+                    </ul>
+                </div>
+                
+                <div class="achievements">
+                    <h4>🎭 Творчі проєкти</h4>
+                    <ul>
+                        <li>Організувала благодійний концерт на підтримку ЗСУ (зібрано 20 000 грн)</li>
+                        <li>Створила пародію на Вєрку Сердючку з класом - найкращий виступ за відгуками</li>
+                        <li>Виступ перед всім містом</li>
+                        <li>Організація благодійних ярмарків</li>
+                    </ul>
+                </div>
+                
+                <div class="achievements">
+                    <h4>💙 Волонтерство</h4>
+                    <ul>
+                        <li>Організація благодійних заходів</li>
+                        <li>Донейти на підтримку України</li>
+                        <li>Допомога людям, які її потребують</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Хобі та інтереси</h2>
+                <p>🏐 Спорт (волейбол, баскетбол, гирьовий спорт)<br>
+                📚 Читання<br>
+                🎥 Створення відеоконтенту<br>
+                🎨 Графічний дизайн</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
